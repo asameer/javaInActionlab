@@ -28,6 +28,9 @@ public class NumericStreams {
                 .mapToInt(Dish::getCalories)
                 .max();
 
+        int maxCal = maxCalories.orElse(1);
+        System.out.println("max cal now : " +maxCal);
+
         int max;
         if (maxCalories.isPresent()) {
             max = maxCalories.getAsInt();
