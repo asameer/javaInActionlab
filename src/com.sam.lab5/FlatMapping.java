@@ -11,6 +11,28 @@ import static java.util.stream.Collectors.toList;
 public class FlatMapping {
 
     public static void main(String[] args) {
+
+        String str = "Enlighter";
+
+
+        String[] arr = str.split("");
+
+        for(String character : arr)
+            System.out.print(character);
+//        List<String> words = Arrays.asList("Modern", "Java", "In", "Action");
+        String[] arrayOfWords = {"Hello", "World"};
+//        Stream<String> streamOfWords = Arrays.stream(arrayOfWords);
+        List<String[]> listOfChar= Arrays.stream(arrayOfWords)
+                .map(word -> word.split(""))
+//                .map(Arrays::stream)
+                .distinct()
+                .collect(toList());
+
+        out.println(listOfChar.size());
+        listOfChar.stream().forEach(c->out.println(c[0]));
+
+    }
+    public static void main1(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> squareNumbers = numbers.stream().map(n -> n * n).collect(toList());
         out.println(squareNumbers);

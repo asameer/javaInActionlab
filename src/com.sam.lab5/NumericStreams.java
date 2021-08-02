@@ -18,9 +18,12 @@ public class NumericStreams {
 
         Arrays.stream(numbers.toArray())
                 .forEach(System.out::println);
+
+        // primitive streams supports numeric operations like sum , and it must faster in mapping to primitive types
         int calories = menu.stream()
                 .mapToInt(Dish::getCalories)
                 .sum();
+
         System.out.println("Number of calories:" + calories);
 
         // max and OptionalInt
