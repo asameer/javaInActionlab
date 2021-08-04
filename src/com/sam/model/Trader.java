@@ -1,4 +1,4 @@
-package com.sam.lab5;
+package com.sam.model;
 
 import java.util.Objects;
 

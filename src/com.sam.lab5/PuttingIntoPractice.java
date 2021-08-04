@@ -1,5 +1,7 @@
 package com.sam.lab5;
 
+import com.sam.model.Trader;
+
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 

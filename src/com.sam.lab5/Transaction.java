@@ -1,5 +1,7 @@
 package com.sam.lab5;
 
+import com.sam.model.Trader;
+
 import java.util.Objects;
 
 public class Transaction {

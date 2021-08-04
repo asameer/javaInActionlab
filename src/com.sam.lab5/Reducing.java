@@ -8,6 +8,7 @@ import static com.sam.lab.Dish.menu;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 
 public class Reducing {
@@ -22,15 +23,23 @@ public class Reducing {
         System.out.println(sum2);
 
         int max = numbers.stream().reduce(0, (a, b) -> Integer.max(a, b));
+
+        // with no initial value it returns optional
+        Optional<Integer> mas = numbers.stream().reduce( (a, b) -> Integer.max(a, b));
         System.out.println(max);
 
         Optional<Integer> max1 = numbers.stream().reduce(Integer::max);
         max1.ifPresent(System.out::println);
 
 
-        //
-        Optional<Integer> min = numbers.stream().reduce(Integer::min);
-        min.ifPresent(System.out::println);
+        int min = numbers.stream().reduce(0,(x,y)->x<y?x:y);
+        System.out.println("min with lambda  = " + min);
+        // is equal to
+        Optional<Integer> minOptional  = numbers.stream().reduce((x,y)->x<y?x:y);
+        System.out.println("min with lambda  = " + min);
+        // doesn't take initial value it returns optional
+        Optional<Integer> minOpt = numbers.stream().reduce(Integer::min);
+        minOpt.ifPresent(System.out::println);
 
         int calories = menu.stream()
                 .map(Dish::getCalories)

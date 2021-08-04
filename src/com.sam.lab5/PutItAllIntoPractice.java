@@ -1,6 +1,7 @@
 package com.sam.lab5;
 
-import javax.swing.text.html.Option;
+import com.sam.model.Trader;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
